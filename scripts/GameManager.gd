@@ -115,8 +115,10 @@ func _enter_battle_ai() -> void:
 	await get_tree().create_timer(1.0).timeout
 	_do_ai_fire()
 
+const DEFAULT_AI_TARGET := Vector2(120.0, 420.0)
+
 func _do_ai_fire() -> void:
-	var target := Vector2(120.0, 420.0)
+	var target := DEFAULT_AI_TARGET
 	if _player_keep != null and is_instance_valid(_player_keep):
 		target = _player_keep.global_position
 	elif _game.player_fortress.get_child_count() > 0:

@@ -87,7 +87,8 @@ func compute_shot(target: Vector2, weapon: String) -> Dictionary:
 	# Apply angular inaccuracy
 	var spread := 0.15 * (1.0 - ai_accuracy)
 	var err    := randf_range(-spread, spread)
-	var c := cos(err);  var s := sin(err)
+	var c := cos(err)
+	var s := sin(err)
 	var ax := aim.x * c - aim.y * s
 	var ay := aim.x * s + aim.y * c
 

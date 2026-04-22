@@ -10,12 +10,14 @@ const BLOCK_SIZE := 40
 var owner_name: String = "player"
 var color: Color = Color(0.2, 0.3, 0.8)
 
+const FALL_OFF_THRESHOLD := 520.0
+
 func _ready() -> void:
 	freeze = true
 	freeze_mode = RigidBody2D.FREEZE_MODE_KINEMATIC
 
 func _process(_delta: float) -> void:
-	if global_position.y > 520.0 and not freeze:
+	if global_position.y > FALL_OFF_THRESHOLD and not freeze:
 		keep_destroyed.emit(owner_name)
 		queue_free()
 

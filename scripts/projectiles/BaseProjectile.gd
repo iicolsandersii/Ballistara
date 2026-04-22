@@ -6,8 +6,10 @@ extends RigidBody2D
 
 signal projectile_settled
 
-const SETTLE_TIME     := 3.0   # seconds before auto-settling
-const OUT_OF_BOUNDS_Y := 700.0
+const SETTLE_TIME          := 3.0   # seconds before auto-settling
+const OUT_OF_BOUNDS_Y      := 700.0
+const OUT_OF_BOUNDS_X_MIN  := -60.0
+const OUT_OF_BOUNDS_X_MAX  := 860.0
 
 var _settle_timer: float = 0.0
 var _settled: bool = false
@@ -21,8 +23,8 @@ func _physics_process(delta: float) -> void:
 	_settle_timer += delta
 	var oob: bool = (
 		global_position.y > OUT_OF_BOUNDS_Y or
-		global_position.x < -60.0 or
-		global_position.x > 860.0
+		global_position.x < OUT_OF_BOUNDS_X_MIN or
+		global_position.x > OUT_OF_BOUNDS_X_MAX
 	)
 	if _settle_timer >= SETTLE_TIME or oob:
 		_settle()

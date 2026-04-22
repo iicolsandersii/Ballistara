@@ -36,9 +36,12 @@ func _set_frozen(fortress: Node, frozen: bool) -> void:
 
 # ---------------------------------------------------------------------------
 
+const _REVEAL_TARGET_X   := 800.0
+const _REVEAL_DURATION   := 0.6
+
 func reveal_ai() -> void:
 	create_tween().tween_property(
-		ai_concealment, "position", Vector2(800.0, 0.0), 0.6
+		ai_concealment, "position", Vector2(_REVEAL_TARGET_X, 0.0), _REVEAL_DURATION
 	).set_ease(Tween.EASE_IN)
 
 # ---------------------------------------------------------------------------
