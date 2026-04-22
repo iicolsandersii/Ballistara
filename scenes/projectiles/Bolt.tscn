@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://boltproj001"]
+
+[ext_resource type="Script" path="res://scripts/projectiles/Bolt.gd" id="1_bolt01"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1"]
+radius = 4.0
+height = 20.0
+
+[node name="Bolt" type="RigidBody2D"]
+gravity_scale = 0.3
+script = ExtResource("1_bolt01")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5707963
+shape = SubResource("CapsuleShape2D_1")

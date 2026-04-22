@@ -1,0 +1,71 @@
+[gd_scene load_steps=3 format=3 uid="uid://buildphase001"]
+
+[ext_resource type="Script" path="res://scripts/BuildPhase.gd" id="1_bp01"]
+[ext_resource type="Script" path="res://scripts/GridOverlay.gd" id="2_go01"]
+
+[node name="BuildPhase" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1_bp01")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BgPanel" type="ColorRect" parent="Control"]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 270.0
+offset_bottom = 600.0
+color = Color(0.1, 0.1, 0.15, 0.75)
+
+[node name="TitleLabel" type="Label" parent="Control"]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 260.0
+offset_bottom = 40.0
+text = "== BUILD PHASE =="
+horizontal_alignment = 1
+
+[node name="WallButton" type="Button" parent="Control"]
+offset_left = 10.0
+offset_top = 50.0
+offset_right = 130.0
+offset_bottom = 80.0
+toggle_mode = true
+button_pressed = true
+text = "Wall Block"
+
+[node name="KeepButton" type="Button" parent="Control"]
+offset_left = 140.0
+offset_top = 50.0
+offset_right = 260.0
+offset_bottom = 80.0
+toggle_mode = true
+text = "Keep"
+
+[node name="CountLabel" type="Label" parent="Control"]
+offset_left = 10.0
+offset_top = 90.0
+offset_right = 260.0
+offset_bottom = 150.0
+autowrap_mode = 3
+text = "Walls: 0 / 12\nKeep: needed!\nClick grid to place"
+
+[node name="DoneButton" type="Button" parent="Control"]
+offset_left = 10.0
+offset_top = 390.0
+offset_right = 260.0
+offset_bottom = 430.0
+text = "Done – Start Battle!"
+
+[node name="GridOverlay" type="Control" parent="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource("2_go01")
