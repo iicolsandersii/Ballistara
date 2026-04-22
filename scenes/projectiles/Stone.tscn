@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://stoneproj001"]
+
+[ext_resource type="Script" path="res://scripts/projectiles/Stone.gd" id="1_stone01"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1"]
+radius = 8.0
+
+[node name="Stone" type="RigidBody2D"]
+gravity_scale = 1.0
+script = ExtResource("1_stone01")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1")

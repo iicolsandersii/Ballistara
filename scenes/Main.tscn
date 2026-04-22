@@ -1,0 +1,26 @@
+[gd_scene load_steps=8 format=3 uid="uid://mainscene001"]
+
+[ext_resource type="Script"      path="res://scripts/GameManager.gd"    id="1_gm01"]
+[ext_resource type="PackedScene" path="res://scenes/Game.tscn"           id="2_game01"]
+[ext_resource type="PackedScene" path="res://scenes/BuildPhase.tscn"     id="3_bp01"]
+[ext_resource type="PackedScene" path="res://scenes/BattleHUD.tscn"      id="4_hud01"]
+[ext_resource type="PackedScene" path="res://scenes/ui/EndScreen.tscn"   id="5_end01"]
+[ext_resource type="Script"      path="res://scripts/AimingSystem.gd"    id="6_aim01"]
+[ext_resource type="Script"      path="res://scripts/AIController.gd"    id="7_ai01"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_gm01")
+
+[node name="Game" parent="." instance=ExtResource("2_game01")]
+
+[node name="BuildPhase" parent="." instance=ExtResource("3_bp01")]
+
+[node name="BattleHUD" parent="." instance=ExtResource("4_hud01")]
+
+[node name="EndScreen" parent="." instance=ExtResource("5_end01")]
+
+[node name="AimingSystem" type="Node2D" parent="."]
+script = ExtResource("6_aim01")
+
+[node name="AIController" type="Node" parent="."]
+script = ExtResource("7_ai01")

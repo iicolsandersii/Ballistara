@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://endscreen001"]
+
+[ext_resource type="Script" path="res://scripts/ui/EndScreen.gd" id="1_end01"]
+
+[node name="EndScreen" type="CanvasLayer"]
+layer = 10
+script = ExtResource("1_end01")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 200.0
+offset_top = 150.0
+offset_right = 600.0
+offset_bottom = 450.0
+
+[node name="VBox" type="VBoxContainer" parent="Panel"]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 380.0
+offset_bottom = 280.0
+
+[node name="ResultLabel" type="Label" parent="Panel/VBox"]
+text = "…"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+custom_minimum_size = Vector2(0, 150)
+
+[node name="RestartButton" type="Button" parent="Panel/VBox"]
+text = "Play Again"
